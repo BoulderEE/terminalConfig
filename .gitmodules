@@ -1,6 +1,3 @@
-[submodule "typescript-ctags"]
-	path = typescript-ctags
-	url = https://github.com/jb55/typescript-ctags.git
 [submodule "vim/bundle/LustyExplorer"]
 	path = vim/bundle/LustyExplorer
 	url = https://github.com/vim-scripts/LustyExplorer.git

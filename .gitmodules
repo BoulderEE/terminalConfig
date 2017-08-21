@@ -49,3 +49,10 @@
 [submodule "vim/bundle/yats.vim"]
 	path = vim/bundle/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "vim/bundle/easycolor-mirror"]
+	path = vim/bundle/easycolor-mirror
+	url = https://github.com/gisphm/easycolor-mirror.git
+[submodule "vim/bundle/TagHighlight"]
+	path = vim/bundle/TagHighlight
+	url = https://github.com/vim-scripts/TagHighlight.git
+	branch = master

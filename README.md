@@ -1,25 +1,28 @@
-Requires Vim and Tmux:
-	* brew install vim tmux
+# Terminal Config
 
-To use:
-	* copy vimrc 		=> ~/.vimrc
-	* copy tmux.conf 	=> ~/.tmux.conf
-	* copy vim 			=> ~/.vim
-	* xfce-terminal 	=> ~/.config/xfce4/terminal/terminalrc
+### Requires Vim and Tmux:
+  * brew install vim tmux
 
-Git Config
-	* brew install git bash-completion
-	* gitconfig 		=> ~/.gitconfig
-	* add to .bash_profile:
-		if [ -f $(brew --prefix)/etc/bash_completion ]; then
-		  . $(brew --prefix)/etc/bash_completion
-		fi
+### To use:
+  * copy vimrc 		=> ~/.vimrc
+  * copy tmux.conf 	=> ~/.tmux.conf
+  * copy vim 			=> ~/.vim
+  * xfce-terminal 	=> ~/.config/xfce4/terminal/terminalrc
 
-Plugin Notes:
-	* run git submodule update --init --recursive (or clone recursively) to acquire plugins. 
+### Git Config  
+  * brew install git bash-completion
+  * gitconfig 		=> ~/.gitconfig
+  * add to .bash_profile:
+```bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+ . $(brew --prefix)/etc/bash_completion
+fi
+```
 
-	* Install pathogen - brew install pathogen
-	* Install ctags - brew install ctags
-	* Install cmake - brew install cmake
-	* Build YouCompleteMe
-
+### Plugin Notes:  
+  * run git submodule update --init --recursive (or clone recursively) to acquire plugins. 
+  * Install pathogen - brew install pathogen
+  * Install ctags - brew install ctags
+  * Install cmake - brew install cmake
+  * Build YouCompleteMe - see YCM docs
+  * TagHighlight run :UpdateTypesFile

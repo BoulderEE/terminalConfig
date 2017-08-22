@@ -54,5 +54,4 @@
 	url = https://github.com/gisphm/easycolor-mirror.git
 [submodule "vim/bundle/TagHighlight"]
 	path = vim/bundle/TagHighlight
-	url = https://github.com/vim-scripts/TagHighlight.git
-	branch = master
+	url = https://github.com/BoulderEE/TagHighlight.git

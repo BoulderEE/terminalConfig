@@ -52,3 +52,6 @@
 [submodule "vim/bundle/TagHighlight"]
 	path = vim/bundle/TagHighlight
 	url = https://github.com/BoulderEE/TagHighlight.git
+[submodule "terminal/Hack"]
+	path = terminal/Hack
+	url = https://github.com/source-foundry/Hack.git

@@ -27,10 +27,11 @@ set nocursorline
 set laststatus=2
 
 " set colorscheme
-colorscheme apprentice.own
+colorscheme hybrid_reverse.own
 
 " tell vim to look at parents for tags
 set tags=.tags;/
+
 " set a new leader key
 nnoremap , ;
 let mapleader = ";"

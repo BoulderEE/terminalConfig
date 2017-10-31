@@ -38,7 +38,7 @@ export ANDROID_NDK=/Users/steve/Library/Android/ndk//android-ndk-r15c
 export ANDROID_HOME=/Users/steve/Library/Android/sdk
 
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$PATH:/Users/steve/Library/Android/sdk/platform-tools/
+export PATH=$PATH:/Users/steve/Library/Android/sdk/platform-tools
 
 ##
 ## Grep aliases

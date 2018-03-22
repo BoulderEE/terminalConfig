@@ -1,6 +1,3 @@
-[submodule "vim/bundle/LustyExplorer"]
-	path = vim/bundle/LustyExplorer
-	url = https://github.com/vim-scripts/LustyExplorer.git
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git

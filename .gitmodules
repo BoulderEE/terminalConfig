@@ -56,3 +56,7 @@
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
 	branch = master
+[submodule "terminal/theme/agnoster-zsh-theme"]
+	path = terminal/theme/agnoster-zsh-theme
+	url = https://github.com/agnoster/agnoster-zsh-theme.git
+	branch = master

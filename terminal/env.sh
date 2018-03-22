@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Owner
-export USER_NAME="Steve"
+export USER_NAME="steve"
 #eval "$(rbenv init -)"
 
 # FileSearch
@@ -34,11 +34,11 @@ alias ls="ls -GFh"
 ##
 ## Android Deps Build Config
 ##
-export ANDROID_NDK=/Users/steve/Library/Android/ndk//android-ndk-r15c
-export ANDROID_HOME=/Users/steve/Library/Android/sdk
+export ANDROID_NDK=/Users/$USER_NAME/Library/Android/ndk//android-ndk-r15c
+export ANDROID_HOME=/Users/$USER_NAME/Library/Android/sdk
 
 export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$PATH:/Users/steve/Library/Android/sdk/platform-tools
+export PATH=$PATH:/Users/$USER_NAME/Library/Android/sdk/platform-tools
 
 ##
 ## Grep aliases

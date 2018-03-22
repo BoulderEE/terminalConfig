@@ -52,3 +52,7 @@
 [submodule "terminal/Hack"]
 	path = terminal/Hack
 	url = https://github.com/source-foundry/Hack.git
+[submodule "vim/bundle/lusty"]
+	path = vim/bundle/lusty
+	url = https://github.com/sjbach/lusty.git
+	branch = master

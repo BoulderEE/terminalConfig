@@ -43,8 +43,9 @@ export PATH=$PATH:/Users/steve/Library/Android/sdk/platform-tools
 ##
 ## Grep aliases
 ##
-alias grepts="grep --include '*.ts' -R -n"
+alias grepts="grep --include '*.ts' --exclude '*.ngfactory.ts' -R -n"
 alias grephtml="grep --include '*.html' -R -n"
 alias grepscss="grep --include '*.scss' -R -n"
 alias grepcpp="grep --include '*.cpp' --include '*.hpp' --include '*.h' -R -n"
 alias grepjava="grep --include '*.java' -R -n"
+alias grepmm="grep --include '*.mm' --include '*.hpp' --include '*.h' -R -n"

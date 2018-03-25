@@ -12,6 +12,9 @@
   * zsh
   * zsh-completions
 
+### Install via pip
+  * pip install tmuxp
+
 ### To use:
   * vim terminalConfig/terminal/env.sh and change USER_NAME to your user name
   * copy * from terminal/config => ~/

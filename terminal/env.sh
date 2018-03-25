@@ -14,7 +14,7 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 ##
 ## TMUX Alias
 ##
-alias newmux="tmux new-session -A -s base"
+alias newmux="tmuxp load brain api web-ui database android ios"
 
 ##
 ## Terminal coloring
@@ -25,11 +25,9 @@ alias newmux="tmux new-session -A -s base"
 alias ls="ls -GFh"
 
 ##
-## Git Autocomplete
+## tmuxp disable window auto titling
 ##
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#  . $(brew --prefix)/etc/bash_completion
-#fi
+export DISABLE_AUTO_TITLE='true'
 
 ##
 ## Android Deps Build Config

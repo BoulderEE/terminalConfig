@@ -5,11 +5,21 @@ execute pathogen#infect()
 set nocompatible
 filetype plugin on
 
+" Always work with utf-8
+set encoding=utf-8
+
 " set up proper backspace
 set backspace=2 
 
+" check one time after 4s of inactivity in normal mode
+set autoread
+au CursorHold * checktime
+
 " set up proper mouse with tmux
 set mouse=a
+
+" set clipboard for tmux copy and pasting
+" set clipboard=unnamed
 
 " syntax highlighting
 syntax on
@@ -52,7 +62,7 @@ set showmatch " matching parens
 set tabstop=4
 set shiftwidth=4
 set autoindent
-set noexpandtab
+set expandtab
 set list listchars=tab:»·,trail:·
 
 " set folding mode to syntax
@@ -110,10 +120,12 @@ imap <F8> <esc>:TagbarToggle<CR>a
 set runtimepath^=~/.vim/bundle/ctrlp.vim/doc
 let g:ctrlp_match_window = 'min:1,max:20,results:50'
 let g:ctrlp_custom_ignore = {
-	\ 'dir': '\v[\/]\.?(git|hg|docs|build)$'
+	\ 'dir': 'git\|hg\|docs\|build\b\|node_modules\|DS_Store\|lib'
 	\ }
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_depth=40
+let g:ctrlp_max_files=0
 
 " lusty explorer stuffs
 nmap <F2> :LustyBufferExplorer<CR>
@@ -132,7 +144,7 @@ nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 
-" super tag configuration
+" super tab configuration
 let g:SuperTabDefaultCompletionType = 'context'
 "let g:SuperTabContextDefaultCompletionType = '<C-n>'
 "let g:SuperTabCrMapping = 0

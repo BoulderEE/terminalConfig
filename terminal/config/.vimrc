@@ -118,9 +118,12 @@ imap <F8> <esc>:TagbarToggle<CR>a
 
 " ctrlp configuration
 set runtimepath^=~/.vim/bundle/ctrlp.vim/doc
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 let g:ctrlp_match_window = 'min:1,max:20,results:50'
 let g:ctrlp_custom_ignore = {
-	\ 'dir': 'git\|hg\|docs\|build\b\|node_modules\|DS_Store\|lib'
+	\ 'dir': 'git\|hg\|docs\|build$\|node_modules\|DS_Store\|lib'
 	\ }
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -175,16 +178,16 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#whitespace#enabled = 0
 
-" easy-motion configuration
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" optional easymotion next/prev mappings (normal ones work) -- provides alternate highlighting and some other stuff
-" map n <Plug>(easymotion-next)
-" map N <Plug>(easymotion-prev)
-
 " map the JSON tool from python to <leader>fj
 nmap <Leader>fj :%!python -m json.tool<CR>
 
 " change cpp-enhanced-highlight class scope
 let g:cpp_class_scope_highlight = 1
+
+" TagHighlight
+" TODO need to sort out python environment.
+if ! exists('g:TagHighlightSettings')
+    let g:TagHighlightSettings = {}
+endif
+let g:TagHighlightSettings['PathToPython'] = '/usr/local/bin/python'
+let g:TagHighlightSettings['ForcedPythonVariant'] = 'python'

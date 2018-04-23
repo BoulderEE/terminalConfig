@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-cpp-enhanced-highlight"]
 	path = vim/bundle/vim-cpp-enhanced-highlight
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
-[submodule "vim/bundle/vim-easymotion"]
-	path = vim/bundle/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
 [submodule "vim/bundle/vim-expand-region"]
 	path = vim/bundle/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region.git

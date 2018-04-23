@@ -32,7 +32,7 @@ export DISABLE_AUTO_TITLE='true'
 ##
 ## Android Deps Build Config
 ##
-export ANDROID_NDK=/Users/$USER_NAME/Library/Android/ndk//android-ndk-r15c
+export ANDROID_NDK=/Users/$USER_NAME/Library/Android/ndk/android-ndk-r15c
 export ANDROID_HOME=/Users/$USER_NAME/Library/Android/sdk
 
 export JAVA_HOME=$(/usr/libexec/java_home)

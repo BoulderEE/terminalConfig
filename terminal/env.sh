@@ -47,3 +47,6 @@ alias grepscss="grep --include '*.scss' -R -n"
 alias grepcpp="grep --include '*.cpp' --include '*.hpp' --include '*.h' -R -n"
 alias grepjava="grep --include '*.java' -R -n"
 alias grepmm="grep --include '*.mm' --include '*.hpp' --include '*.h' -R -n"
+
+alias sizes="du -sh * | sort -h"
+alias free_space="df -h"

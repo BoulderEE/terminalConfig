@@ -6,7 +6,17 @@ export USER_NAME="steve"
 
 # FileSearch
 function f() { find . -iname "*$1*" ${@:2} }
+
+##
+## Grep aliases
+##
 function r() { grep "$1" ${@:2} -R . }
+function rcpp() { grep "$1" ${@:2} --include '*.cpp' --include '*.hpp' --include '*.h' --include '*.tpp' -R -n . }
+function rts() { grep "$1" ${@:2} --include '*.ts' --exclude '*.ngfactory.ts' --exclude '*.ngstyle.ts' --exclude '*.js' --exclude-dir 'node_modules' -R -n . }
+function rhtml() { grep "$1" ${@:2} --include '*.html' -R -n . }
+function rscss() { grep "$1" ${@:2} --include '*.scss' -R -n . }
+function rjava() { grep "$1" ${@:2} --include '*.java' -R -n . }
+function rmm() { grep "$1" ${@:2} --include '*.mm' --include '*.hpp' --include '*.h' -R -n . }
 
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
@@ -39,14 +49,12 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$PATH:/Users/$USER_NAME/Library/Android/sdk/platform-tools
 
 ##
-## Grep aliases
+## Quick brain build
 ##
-alias grepts="grep --include '*.ts' --exclude '*.ngfactory.ts' --exclude '*.ngstyle.ts' --exclude '*.js' --exclude-dir 'node_modules' -R -n"
-alias grephtml="grep --include '*.html' -R -n"
-alias grepscss="grep --include '*.scss' -R -n"
-alias grepcpp="grep --include '*.cpp' --include '*.hpp' --include '*.h' -R -n"
-alias grepjava="grep --include '*.java' -R -n"
-alias grepmm="grep --include '*.mm' --include '*.hpp' --include '*.h' -R -n"
+alias bbuild="cd /Users/steve/Source/brain/build/mac/brain_cli/Debug/"
 
+##
+## Disk space
+##
 alias sizes="du -sh * | sort -h"
 alias free_space="df -h"

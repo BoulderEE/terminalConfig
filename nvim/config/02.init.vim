@@ -1,11 +1,10 @@
-" Don't wrap text
-"set nowrap
-
 " Encoding
 set encoding=utf-8
 
 " Plugins essential
-syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
 
 " TODO add indent.vim at runtimepath
 filetype plugin indent on
@@ -13,10 +12,7 @@ filetype plugin indent on
 """"""""""""""
 """ LEADER
 """"""""""""""
-"
-" You should set leader before loading all plugins
 let mapleader=";"
-
 " General leader map
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>z :wq<cr>
@@ -25,53 +21,17 @@ nnoremap <leader>v <C-w>v<C-w>l " Split then move to the split
 nnoremap <leader>n :bnext<cr> " Next buffer
 nnoremap <leader>N :bprev<cr> " Previous buffer
 
-" List all buffers
-nnoremap <leader>b :CtrlPBuffer<cr>
-
 " Toggle paste mode when you want to paste from outside source
 set pastetoggle=<leader>p
 
 """"""""""""""
-""" PLUGIN
+""" TMUX
 """"""""""""""
-"
-" List of plugins:
-" 0. pathogen
-" 1. ctrlp
-" 2. auto-pairs
-" 3. nerdcommenter
-" 4. nerdtree
-" 5. lightline
-" 6. surround
-" 7. repeat
-" 8. fugitive
-" 9. supertab
-" 10. ultisnips
-" 11. tagbar
-" 12 cpp enhanced highlight
-" TODO need to add and ultisnips
+set mouse=a
 
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
-
-" CtrlP
-let g:ctrlp_max_height = 10
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-"let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git'
-let g:ctrlp_custom_ignore = {
-    \ 'dir': 'git\|hg\|docs\|build$\|node_modules\|DS_Store\|lib'
-    \ }
-let g:ctrlp_working_path_mode = 'ar' " CtrlP scans through .git project
-let g:ctrlp_match_window = 'min:1,max:20,results:50'
-let g:ctrlp_max_files = 0 " Set no max file limit
-let g:ctrlp_max_depth=40
-let g:ctrlp_show_hidden = 1
-
-" Nerdcommenter
-let NERDSpaceDelims=1
-
-" Nerdtree
+"""""""""""""
+""" NerdTree
+"""""""""""""
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.git']
 let g:NERDTreeWinSize=50
@@ -81,63 +41,49 @@ let NERDTreeMinimalUI=1
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " Close vim if there is only nerdtree
 
-" Lightline
-let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \   'active': {
-    \     'left':[ [ 'mode', 'paste' ],
-    \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-    \     ]
-    \   },
-    \   'component': {
-    \     'lineinfo': ' %3l:%-2v',
-    \   },
-    \   'component_function': {
-    \     'gitbranch': 'fugitive#head',
-    \   }
-    \ }
+"""""""""""""
+""" FZF
+""" TODO check this out and add fzf functions
+""" https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L151-L187
+"""""""""""""
+set rtp+=/usr/local/opt/fzf
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+nnoremap <silent> <leader>; :BLines<CR>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> <leader>? :History<CR>
+" nnoremap <silent> <leader>/ :execute 'Ag ' . input('Ag/')<CR>
+" nnoremap <silent> <leader>. :AgIn 
 
-let g:lightline.separator = {
-    \   'left': '', 'right': ''
-    \}
+" nnoremap <silent> K :call SearchWordWithAg()<CR>
+" vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+nnoremap <silent> <leader>ft :Filetypes<CR>
 
-let g:lightline.subseparator = {
-    \   'left': '', 'right': '' 
-    \}
+" function! SearchWordWithAg()
+"     execute 'Ag' expand('<cword>')
+" endfunction
 
-" ultisnips stuff
-let g:UltiSnipsExpandTrigger="<C-g>"
-let g:UltiSnipsJumpForwardTrigger="<C-e>"
-let g:UltiSnipsJumpBackwardTrigger="<C-w>"
-
-" Ultisnips
-let g:UltiSnipsExpandTrigger="<C-g>"
-let g:UltiSnipsJumpForwardTrigger="<C-e>"
-let g:UltiSnipsJumpBackwardTrigger="<C-w>"
-
-" Tagbar
-nmap <leader>t :TagbarToggle<CR>
-nmap <F8> :TagbarToggle<CR>
-imap <F8> <esc>:TagbarToggle<CR>a
-
-"Cpp Enhanced Highlight
+""""""""""""""""""""""""""
+""" CPP Enhanced Highlight
+""""""""""""""""""""""""""
+" 11. Cpp Enhanced Highlight
 let g:cpp_class_scope_highlight = 1
-
-" TagHighlight
-" TODO need to sort out python environment.
-"if ! exists('g:TagHighlightSettings')
-"    let g:TagHighlightSettings = {}
-"endif
-"let g:TagHighlightSettings['PathToPython'] = '/usr/local/bin/python'
-"let g:TagHighlightSettings['ForcedPythonVariant'] = 'python'
+let g:cpp_member_variable_highlight = 1
 
 """""""""""""
-""" COLOR
+""" Theming
 """""""""""""
 
 set background=dark
 colorscheme hybrid_reverse.own
-set cursorline
+set nocursorline
+let g:airline_theme='hybrid'
+set termguicolors
+
 
 """""""""""""""
 """ GENERAL
@@ -154,13 +100,8 @@ set cursorline
 set nobackup
 set noswapfile
 
-" tell vim to look at parents for tags
-set tags=.tags;/
-
 " Show line number
 set number
-"set relativenumber
-"hi LineNr ctermfg=brown
 
 " Show row and column ruler information
 set ruler
@@ -220,6 +161,9 @@ set foldmethod=syntax
 set foldlevel=99
 set foldcolumn=1
 
+" Syntax specializations
+autocmd BufNewFile,BufRead *.tpp set syntax=cpp
+
 " Don't redraw while executing macros (performance config)
 set lazyredraw
 
@@ -246,15 +190,23 @@ set fillchars+=vert:█
 " Map jj to esc for escaping insert mode
 inoremap jj <esc>
 
+" Remap increment and decrement to avoid tmux collision
+" Alt key mapping for meta key
+" execute "set <M-a>=\ea"
+" nnoremap <M-a> <C-a>
+" execute "set <M-x>=\ex"
+" nnoremap <M-x> <C-x>
+
 map <F5> :setlocal spell! spelllang=en_us<CR>
 
 noremap Q <nop>
 
-nnoremap <C-h> <C-w>h " Fast moving
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h " Fast moving
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
+" Doesn't work cuz Meta/Alt key on mac...
 nnoremap <M-h> <C-w><
 nnoremap <M-j> <C-w>-
 nnoremap <M-k> <C-w>+

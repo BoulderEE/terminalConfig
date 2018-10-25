@@ -34,8 +34,5 @@
 NVim
 Dein
 Deoplete
-LanguageServer
-    cquery - https://github.com/cquery-project/cquery
-    Bear (compiliation database) - https://github.com/rizsotto/Bear
 FZF
 Powerline fonts

@@ -54,3 +54,19 @@
 	path = terminal/theme/agnoster-zsh-theme
 	url = https://github.com/agnoster/agnoster-zsh-theme.git
 	branch = master
+[submodule "lang_servers/java/eclipse.jdt.ls"]
+	path = lang_servers/java/eclipse.jdt.ls
+	url = https://github.com/eclipse/eclipse.jdt.ls.git
+	branch = master
+[submodule "lang_servers/cpp/Bear"]
+	path = lang_servers/cpp/Bear
+	url = https://github.com/rizsotto/Bear.git
+	branch = master
+[submodule "lang_servers/cpp/cquery"]
+	path = lang_servers/cpp/cquery
+	url = https://github.com/cquery-project/cquery.git
+	branch = master
+[submodule "terminal/theme/fonts"]
+	path = terminal/theme/fonts
+	url = https://github.com/powerline/fonts.git
+	branch = master

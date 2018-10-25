@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+##################################################
+## copy this file to /usr/local/bin/
+## change -configuration to config_mac/linux/windows
+##################################################
+
 server=~/Source
 
 java \

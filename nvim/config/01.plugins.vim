@@ -37,7 +37,7 @@ if dein#load_state(deinpath)
                 \ 'rev': 'next',
                 \ 'build': 'bash install.sh',
                 \ })
-
+    call dein#add('leafgarland/typescript-vim')
     " Required:
     call dein#end()
     call dein#save_state()

@@ -29,3 +29,13 @@
   chsh -s /usr/local/bin/zsh
   cp terminalConfig/terminal/theme/agnoster-zsh-theme ~/.oh-my-zsh/themes
 ```
+
+//Update readme
+NVim
+Dein
+Deoplete
+LanguageServer
+    cquery - https://github.com/cquery-project/cquery
+    Bear (compiliation database) - https://github.com/rizsotto/Bear
+FZF
+Powerline fonts

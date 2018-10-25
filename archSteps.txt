@@ -1,0 +1,17 @@
+window manager: awesome
+terminal emulator: urxvt
+compositing manager: xcompmgr
+display manager: lightdm
+powerline fonts
+
+setting up nvim
+1. pacman nvim
+2. dein
+    2a. curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    2b. sh ./installer.sh ~/.cache/dein
+
+Todos:
+    nvim coloring in non-tmux mode
+    deoplete setup
+    wallpaper is hardcoded in theme.lua -> use get_themes_dir() instead
+        copy themes dir from /usr/share/awesome/themes/ -> ~/.config/awesome/themes

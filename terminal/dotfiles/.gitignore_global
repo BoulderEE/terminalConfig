@@ -3,3 +3,7 @@
 *.taghl
 .tags
 tags
+*.iml
+compile_commands.json
+workspace
+app/.settings

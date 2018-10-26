@@ -14,8 +14,6 @@ let g:deoplete#sources = {}
 let g:deoplete#sources.cpp = ['LanguageClient']
 let g:deoplete#sources.typescript = ['LanguageClient']
 let g:deoplete#sources.java = ['LanguageClient']
-"let g:deoplete#sources.python = ['LanguageClient']
-"let g:deoplete#sources.python3 = ['LanguageClient']
 let g:deoplete#sources.vim = ['vim']
 
 " ignored sources

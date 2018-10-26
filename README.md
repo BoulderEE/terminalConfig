@@ -3,14 +3,18 @@
 ### Update submodules and acquire VIM plugins
   * git submodule update --init --recursive 
 
-### Install via Homebrew
-  * brew install vim
+### Install via Package Manager
+  * neovim
   * tmux
+  * fzf
   * ctags
   * cmake
   * git
   * zsh
   * zsh-completions
+
+### Neovim
+  * copy nvim directory to ~/.config
 
 ### Install via pip
   * pip install tmuxp
@@ -20,8 +24,7 @@
   * copy * from terminal/config => ~/
 
 ### Plugin Notes:  
-  * Build YouCompleteMe - see YCM docs
-  * TagHighlight run :UpdateTypesFile
+  * TagHighlight run :UpdateTypesFile (might need for Typescript)
 
 ### Zsh:
 ```bash
@@ -31,8 +34,6 @@
 ```
 
 //Update readme
-NVim
 Dein
 Deoplete
 FZF
-Powerline fonts

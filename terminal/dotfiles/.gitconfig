@@ -9,10 +9,12 @@
 	lo = log --graph --oneline --decorate --date=local
 	pa = pull --ff-only --all --prune
 	lao = log --all --graph --oneline --decorate
+	laoda = log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	alias = config --get-regexp ^alias\\.
+    files = diff-tree --no-commit-id --name-only -r
 [core]
 	excludesfile = /Users/steve/.gitignore_global
-	editor = /usr/bin/vim
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -20,7 +22,7 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = 
-	email = 
+	name = Steve
+	email = steve@iruleathome.com
 [commit]
-	template = 
+	template = /Users/irule/.stCommitMsg

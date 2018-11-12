@@ -27,14 +27,6 @@ endif
 " TODO add indent.vim at runtimepath
 filetype plugin indent on
 
-" Make vim save swapfiles, backups, and undofiles in .vim
-" set swapfile
-" set backup
-" set undofile
-" set directory=~/.vim/tmp//,.
-" set backupdir=~/.vim/tmp//,.
-" set undodir=~/.vim/tmp//,.
-" Use this config if you don't want swapfiles and backups, at all.
 set nobackup
 set noswapfile
 
@@ -101,6 +93,7 @@ set foldcolumn=1
 
 " Syntax specializations
 autocmd BufNewFile,BufRead *.tpp set syntax=cpp
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 " Don't redraw while executing macros (performance config)
 set lazyredraw
@@ -144,8 +137,14 @@ inoremap jj <esc>
 " nnoremap <M-x> <C-x>
 
 map <F5> :setlocal spell! spelllang=en_us<CR>
-
 noremap Q <nop>
+
+"""""""""""""""""
+""" C++ mappings
+"""""""""""""""""
+nnoremap <leader>s :e %<.cpp<cr>
+nnoremap <leader>h :e %<.h<cr>
+nnoremap <leader>t :e %<.hpp<cr>
 
 """"""""""""
 """ MISC

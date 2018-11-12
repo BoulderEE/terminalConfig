@@ -1,9 +1,7 @@
-autocmd BufRead *.ts setlocal filetype=typescript
-
-" language server commands
-" \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-" \ 'cpp': ['cquery', '--log-file=/tmp/cq.log'],
-" \ 'cpp': ['clangd'],
+""""""""""""""""""""""""""
+""" Language server commands
+""""""""""""""""""""""""""
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
             \ 'cpp': ['/Users/steve/Source/cquery/build/release/bin/cquery',
             \ '--log-file=/tmp/cq.log',
@@ -12,21 +10,24 @@ let g:LanguageClient_serverCommands = {
             \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
             \ 'java': ['/usr/local/bin/jdtls']
             \ }
-let g:LanguageClient_autoStart = 1
 
-" set completefunc=LanguageClient#complete
-" set formatexpr=LanguageClient_textDocument_rangeFormatting()
+function SetLSPShortcuts()
+  nnoremap <silent>gd :call LanguageClient#textDocument_definition({ 'gotoCmd': 'vsplit' })<CR>
+  nnoremap <F2> :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <silent>gf :call LanguageClient#textDocument_formatting()<CR>
+  nnoremap <silent>gt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <silent>gr :call LanguageClient#textDocument_references()<CR>
+  nnoremap <silent>ga :call LanguageClient_workspace_applyEdit()<CR>
+  nnoremap <silent>gc :call LanguageClient#textDocument_completion()<CR>
+  nnoremap <silent>gh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent>gs :call LanguageClient_textDocument_documentSymbol()<CR>
+  nnoremap <silent>gm :call LanguageClient_contextMenu()<CR>
+endfunction()
 
-" let g:LanguageClient_loadSettings = 1
-" let g:LanguageClient_settingsPath = '/Users/steve/.config/nvim/settings.json'
-
-nn <silent> K :call LanguageClient_textDocument_hover()<cr>
-nn <silent> gd :call LanguageClient_textDocument_definition({'gotoCmd': 'vsplit'})<cr>
-nn <silent> gr :call LanguageClient_textDocument_references()<cr>
-nn <f2> :call LanguageClient_textDocument_rename()<cr>
-" TODO this doesn't work yet 
-"nn <leader>ji :Denite documentSymbol<cr>
-"nn <leader>jI :Denite workspaceSymbol<cr>
+augroup LSP
+  autocmd!
+  autocmd FileType javascript,typescript,cpp,c,ruby,python call SetLSPShortcuts()
+augroup END
 
 "imap <C-k> <Plug>(neosnippet_expand_or_jump)
 "smap <C-k> <Plug>(neosnippet_expand_or_jump)

@@ -1,0 +1,40 @@
+{
+  "session_name": "nebula-web-ui",
+  "start_directory": "/Users/steve/Source/nebula-web-ui",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "servers",
+      "layout": "even-horizontal",
+      "panes": [
+        {},
+        {
+          "shell_command": [
+            "git fetch --all",
+            "git pa",
+            "git sup",
+            "rm -rf node_modules",
+            "yarn",
+            "yarn start"
+          ],
+          "focus": "true"
+        }
+      ],
+      "focus": "true"
+    },
+    {
+      "options": {
+        "automatic-rename": "off",
+        "main-pane-height": "35"
+      },
+      "window_name": "editor",
+      "layout": "main-horizontal",
+      "panes": [
+        {},
+        {}
+      ]
+    }
+  ]
+}

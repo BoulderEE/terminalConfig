@@ -1,0 +1,25 @@
+{
+  "session_name": "android",
+  "start_directory": "/Users/steve/Source/brain-android-client/",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off",
+        "main-pane-height": "35"
+      },
+      "window_name": "editor",
+      "layout": "main-horizontal",
+      "panes": [
+        {
+          "shell_command": [
+            "git fetch --all",
+            "git pa",
+            "git sup"
+          ],
+          "focus": "true"
+        },
+        {}
+      ]
+    }
+  ]
+}

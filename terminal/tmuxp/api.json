@@ -1,0 +1,42 @@
+{
+  "session_name": "nebula-api",
+  "start_directory": "/Users/steve/Source/nebula-api",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "servers",
+      "layout": "tiled",
+      "panes": [
+        {
+          "shell_command": [
+            "git fetch --all",
+            "git pa",
+            "git sup",
+            "./gradlew server:auth:bootrun"
+          ],
+          "focus": "true"
+        },
+        {
+          "shell_command": [
+            "git fetch --all",
+            "git pa",
+            "git sup",
+            "./gradlew server:api:bootrun"
+          ]
+        },
+        {},
+        {
+          "shell_command": [
+          "cd /Users/steve/Source/device-driver-service",
+          "git fetch --all",
+          "git pa",
+          "git sup",
+          "./gradlew bootrun" 
+          ]
+        }
+      ]
+    }
+  ]
+}

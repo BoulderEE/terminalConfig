@@ -1,0 +1,55 @@
+{
+  "session_name": "brain",
+  "start_directory": "/Users/steve/Source/brain",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off",
+        "main-pane-height": "35"
+      },
+      "window_name": "editor",
+      "focus": "true",
+      "layout": "main-horizontal",
+      "panes": [
+        {
+          "shell_command": [
+            "git fetch --all",
+            "git pa",
+            "git sup"
+          ],
+          "focus": "true"
+        },
+        {}
+      ]
+    },
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "scripts",
+      "layout": "tiled",
+      "panes": [
+        {
+          "focus": "true"
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "resources",
+      "start_directory": "/Users/steve/Source/brain/build/mac/brain_cli/Debug/",
+      "layout": "even-horizontal",
+      "panes": [
+        {
+          "focus": "true"
+        },
+        {}
+      ]
+    }
+  ]
+}

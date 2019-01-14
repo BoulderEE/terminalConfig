@@ -1,0 +1,30 @@
+{
+  "session_name": "database",
+  "start_directory": "/Users/steve/Source/nebula-api/",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "local-db",
+      "layout": "tiled",
+      "panes": [
+        "echo psql -U dev builder"
+      ],
+      "focus": "true"
+    },
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "remote-db",
+      "start_directory": "/Users/steve/Source/nebula-api/scripts/",
+      "layout": "tiled",
+      "panes": [
+        {
+          "focus": "true"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "session_name": "iruledev",
+  "windows": [
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "brain",
+      "layout": "770c,238x48,0,0[238x24,0,0,0,238x23,0,25,1]",
+      "panes": [
+        "",
+        {
+          "shell_command": [
+          	"git fetch --all",
+          	"git pa",
+          	"git sup"],
+          "focus": "true"
+        }
+      ],
+      "start_directory": "/Users/irule/Source/brain"
+    },
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "api",
+      "layout": "33fa,238x48,0,0{119x48,0,0[119x24,0,0,2,119x23,0,25,5],118x48,120,0[118x24,120,0,3,118x23,120,25,4]}",
+      "panes": [
+        {
+          "shell_command": [
+            "cd /Users/irule/Source/nebula-api",
+            "git fetch --all",
+		  	"git pa",
+          	"git sup",
+			"./gradlew server:api:bootrun"
+          ]
+        },
+        {
+          "shell_command": [
+            "cd /Users/irule/Source/nebula-api",
+            "git fetch --all",
+		  	"git pa",
+		  	"git sup",
+			"./gradlew server:auth:bootrun"
+          ],
+          "focus": "true"
+        },
+        {
+          "shell_command": [
+            "cd /Users/irule/Source/nebula-api",
+            "git fetch --all",
+			"git pa",
+			"git sup",
+		  	"./gradlew server:dashboard:bootrun"
+          ]
+        },
+        {
+          "shell_command": [
+          "cd /Users/irule/Source/nebula-api",
+          "git fetch --all",
+		  "git pa",
+		  "git sup",
+		  "./gradlew server:socket:bootrun" 
+          ]
+        }
+      ]
+    },
+    {
+      "options": {
+        "automatic-rename": "off"
+      },
+      "window_name": "web-ui",
+      "layout": "771b,238x48,0,0[238x24,0,0,6,238x23,0,25,7]",
+      "panes": [
+	  	{
+			"shell_command": [
+			"cd /Users/irule/Source/device-driver-service",
+			"git fetch --all",
+		  	"git pa",
+		  	"git sup",
+			"./gradlew bootrun"
+			]
+		},
+        {
+          "shell_command": [
+		  	"cd /Users/irule/Source/nebula-web-ui",
+		  	"git fetch --all",
+		  	"git pa",
+		  	"git sup",
+			"npm start"
+			],
+			"focus": "true"
+        }
+      ],
+      "focus": "true",
+      "start_directory": "/Users/irule/Source/nebula-web-ui"
+    }
+  ]
+}

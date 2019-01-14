@@ -1,0 +1,24 @@
+snippet header "Create a cpp header file with license and include guards"
+//
+// $1`!p snip.rv = '/' + snip.fn`
+// Copyright © 2018, iRule LLC
+//
+
+#ifndef __$2_`!p snip.rv = snip.fn[:-2].upper()`_H__
+#define __$2_`!p snip.rv = snip.fn[:-2].upper()`_H__
+
+class `!p snip.rv = snip.fn[:-2]` {
+
+};
+
+#endif // __$2_`!p snip.rv = snip.fn[:-2].upper()`_H__
+endsnippet
+
+snippet constructors "Create set of constructors conforming to the Rule of 5"
+`!p snip.rv = snip.fn[:-2]`() = default; // Default constructor
+`!p snip.rv = snip.fn[:-2]`(const `!p snip.rv = snip.fn[:-2]`&) = default; // Copy constructor
+`!p snip.rv = snip.fn[:-2]`(`!p snip.rv = snip.fn[:-2]`&&) = default; // Move constructor
+`!p snip.rv = snip.fn[:-2]`& operator=(const `!p snip.rv = snip.fn[:-2]`&) = default; // Copy assignment operator
+`!p snip.rv = snip.fn[:-2]`& operator=(`!p snip.rv = snip.fn[:-2]`&&) = default; // Move assignment operator
+virtual ~`!p snip.rv = snip.fn[:-2]`() = default;
+endsnippet

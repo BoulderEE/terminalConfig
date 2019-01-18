@@ -40,21 +40,22 @@ alias ls="ls -GFh"
 export DISABLE_AUTO_TITLE='true'
 
 ##
-## Android Deps Build Config
+## FZF
 ##
-export ANDROID_NDK=/Users/$USER_NAME/Library/Android/ndk/android-ndk-r15c
-export ANDROID_HOME=/Users/$USER_NAME/Library/Android/sdk
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH=$PATH:/Users/$USER_NAME/Library/Android/sdk/platform-tools
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ##
-## Quick brain build
+## RVM
 ##
-alias bbuild="cd /Users/steve/Source/brain/build/mac/brain_cli/Debug/"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Check if rvm file exists and source if it does.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ##
 ## Disk space
 ##
 alias sizes="du -sh * | sort -h"
 alias free_space="df -h"
+

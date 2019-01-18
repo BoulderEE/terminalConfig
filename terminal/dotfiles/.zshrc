@@ -84,4 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/Source/terminalConfig/terminal/env.sh
+source ~/Source/terminalConfig/terminal/linux_env.sh
+##source ~/Source/terminalConfig/terminal/mac_env.sh
 prompt_context() {}

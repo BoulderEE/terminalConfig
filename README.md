@@ -1,6 +1,6 @@
 # Terminal Config
 
-### Update submodules and acquire VIM plugins
+### Update submodules
   * git submodule update --init --recursive 
 
 ### Install via Package Manager
@@ -30,10 +30,10 @@
 ```bash
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
   chsh -s /usr/local/bin/zsh
-  cp terminalConfig/terminal/theme/agnoster-zsh-theme ~/.oh-my-zsh/themes
+  cp terminalConfig/terminal/theme/* ~/.oh-my-zsh/themes/
 ```
 
 //Update readme
-Dein
+Plugged
 Deoplete
 FZF

@@ -86,3 +86,10 @@ endfunction
 """"""""""""""""""""""""""
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
+
+""""""""""""""""""""""""""
+""" UltiSnips
+""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<C-g>"
+let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsJumpBackwardTrigger="<C-w>"

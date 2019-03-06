@@ -7,7 +7,7 @@ export ZSH=/Users/$USER/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="gnzh-own"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -86,4 +86,13 @@ source $ZSH/oh-my-zsh.sh
 source ~/Source/terminalConfig/terminal/env.sh
 source ~/Source/terminalConfig/terminal/linux_env.sh
 ##source ~/Source/terminalConfig/terminal/mac_env.sh
-prompt_context() {}
+prompt_context() {})
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# JENV SHIT
+export PATH="$PATH:$HOME/.jenv/bin"
+eval "$(jenv init -)"

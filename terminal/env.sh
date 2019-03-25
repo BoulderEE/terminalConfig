@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Owner
-export USER_NAME="steve"
+export USER_NAME="staylor"
 #eval "$(rbenv init -)"
 
 # FileSearch
@@ -10,13 +10,15 @@ function f() { find . -iname "*$1*" ${@:2} }
 ##
 ## Grep aliases
 ##
-function r() { grep "$1" ${@:2} -R . }
-function rcpp() { grep "$1" ${@:2} --include '*.cpp' --include '*.hpp' --include '*.h' --include '*.tpp' -R -n . }
+function r() { grep "$1" ${@:2} --exclude-dir ".build**" --exclude-dir ".ccache" -I -R . }
+function rcpp() { grep "$1" ${@:2} --include '*.cpp' --include '*.hpp' --include '*.h' --include '*.cc' --include '*.tpp' --include '*.inl' --include '*.hh' -R -n . }
 function rts() { grep "$1" ${@:2} --include '*.ts' --exclude '*.ngfactory.ts' --exclude '*.ngstyle.ts' --exclude '*.js' --exclude-dir 'node_modules' -R -n . }
 function rhtml() { grep "$1" ${@:2} --include '*.html' -R -n . }
 function rscss() { grep "$1" ${@:2} --include '*.scss' -R -n . }
 function rjava() { grep "$1" ${@:2} --include '*.java' -R -n . }
 function rmm() { grep "$1" ${@:2} --include '*.mm' --include '*.hpp' --include '*.h' -R -n . }
+function rwafl() { grep "$1" ${@:2} --include '*.wafl' -R -n . }
+function rasl() { grep "$1" ${@:2} --include '*.asl' -R -n . }
 
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }

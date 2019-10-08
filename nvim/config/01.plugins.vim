@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -20,9 +21,9 @@ Plug 'rking/ag.vim'
 " Plug 'neomutt/neomutt.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'alaric/neovim-visor'
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+"            \ 'branch': 'next',
+"            \ 'do': 'bash install.sh',
+"            \ }
 Plug 'leafgarland/typescript-vim'
 call plug#end()

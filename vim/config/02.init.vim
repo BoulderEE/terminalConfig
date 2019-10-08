@@ -92,7 +92,9 @@ set foldlevel=99
 set foldcolumn=1
 
 " Syntax specializations
-autocmd BufNewFile,BufRead *.tpp set syntax=cpp
+autocmd BufNewFile,BufRead *.inl set syntax=cpp
+autocmd BufNewFile,BufRead *.cc set syntax=cpp
+autocmd BufNewFile,BufRead *.hh set syntax=cpp
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 " Don't redraw while executing macros (performance config)
@@ -114,7 +116,7 @@ set fillchars+=vert:█
 """ Theming
 """""""""""""
 set background=dark
-colorscheme hybrid_reverse.own
+silent! colorscheme hybrid_reverse.own
 set nocursorline
 let g:airline_theme='hybrid'
 "set termguicolors

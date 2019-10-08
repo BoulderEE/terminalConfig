@@ -42,9 +42,9 @@ set backspace=indent,eol,start
 " Tab and indent
 set autoindent
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
-set softtabstop=4
+set softtabstop=2
 
 " The /g flag on :s substitutions by default
 set gdefault
@@ -92,7 +92,9 @@ set foldlevel=99
 set foldcolumn=1
 
 " Syntax specializations
-autocmd BufNewFile,BufRead *.tpp set syntax=cpp
+autocmd BufNewFile,BufRead *.inl set syntax=cpp
+autocmd BufNewFile,BufRead *.cc set syntax=cpp
+autocmd BufNewFile,BufRead *.hh set syntax=cpp
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 " Don't redraw while executing macros (performance config)
@@ -114,10 +116,10 @@ set fillchars+=vert:█
 """ Theming
 """""""""""""
 set background=dark
-colorscheme hybrid_reverse.own
+silent! colorscheme hybrid_reverse.own
 set nocursorline
 let g:airline_theme='hybrid'
-set termguicolors
+"set termguicolors
 
 """""""""""
 """ MAP
@@ -142,9 +144,9 @@ noremap Q <nop>
 """""""""""""""""
 """ C++ mappings
 """""""""""""""""
-nnoremap <leader>s :e %<.cpp<cr>
-nnoremap <leader>h :e %<.h<cr>
-nnoremap <leader>t :e %<.hpp<cr>
+nnoremap <leader>s :e %<.cc<cr>
+nnoremap <leader>h :e %<.hh<cr>
+nnoremap <leader>t :e %<.inl<cr>
 
 """"""""""""
 """ MISC

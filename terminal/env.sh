@@ -10,15 +10,56 @@ function f() { find . -iname "*$1*" ${@:2} }
 ##
 ## Grep aliases
 ##
-function r() { grep "$1" ${@:2} --exclude-dir ".build**" --exclude-dir ".ccache" -I -R . }
-function rcpp() { grep "$1" ${@:2} --include '*.cpp' --include '*.hpp' --include '*.h' --include '*.cc' --include '*.tpp' --include '*.inl' --include '*.hh' -R -n . }
-function rts() { grep "$1" ${@:2} --include '*.ts' --exclude '*.ngfactory.ts' --exclude '*.ngstyle.ts' --exclude '*.js' --exclude-dir 'node_modules' -R -n . }
-function rhtml() { grep "$1" ${@:2} --include '*.html' -R -n . }
-function rscss() { grep "$1" ${@:2} --include '*.scss' -R -n . }
-function rjava() { grep "$1" ${@:2} --include '*.java' -R -n . }
-function rmm() { grep "$1" ${@:2} --include '*.mm' --include '*.hpp' --include '*.h' -R -n . }
-function rwafl() { grep "$1" ${@:2} --include '*.wafl' -R -n . }
-function rasl() { grep "$1" ${@:2} --include '*.asl' -R -n . }
+function r() { grep "$1" ${@:2} \
+                 -s \
+                 --exclude 'compile_commands.json' \
+                 --exclude 'config_blob.json' \
+                 --exclude-dir "bazel**" \
+                 --exclude-dir "build**" \
+                 --exclude-dir ".build**" \
+                 --exclude-dir ".ccache" \
+                 --exclude-dir "cpp_**" \
+                 --exclude-dir ".idea" \
+                 --exclude-dir "logs" \
+                 --exclude-dir ".ccls-cache" \
+                 -I \
+                 -R . \
+             }
+
+function rcpp() { r "$1" ${@:2} \
+                    --include '*.cpp' \
+                    --include '*.hpp' \
+                    --include '*.h' \
+                    --include '*.cc' \
+                    --include '*.tpp' \
+                    --include '*.inl' \
+                    --include '*.hh' \
+                }
+
+function rwafl() { r "$1" ${@:2} --include '*.wafl' }
+
+function rasl() { r "$1" ${@:2} --include '*.asl' }
+
+function rcfg() { r "$1" ${@:2} --include '*.json' --include '*.yaml' }
+
+function rts() { r "$1" ${@:2} \
+                   --include '*.ts' \
+                   --exclude '*.ngfactory.ts' \
+                   --exclude '*.ngstyle.ts' \
+                   --exclude '*.js' \
+                   --exclude-dir 'node_modules' \
+               }
+
+function rpy() { r "$1" ${@:2} -s --include '*.py' -R -n . }
+
+function rhtml() { r "$1" ${@:2} -s --include '*.html' -R -n . }
+
+function rscss() { r "$1" ${@:2} -s --include '*.scss' -R -n . }
+
+function rjava() { r "$1" ${@:2} -s --include '*.java' -R -n . }
+
+
+function rmm() { grep "$1" ${@:2} -s --include '*.mm' --include '*.hpp' --include '*.h' -R -n . }
 
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
@@ -26,7 +67,7 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 ##
 ## TMUX Alias
 ##
-alias newmux="tmuxp load brain api web-ui database android ios"
+#alias newmux="tmuxp load brain api web-ui database android ios"
 
 ##
 ## Terminal coloring

@@ -1,27 +1,27 @@
-""""""""""""""""""""""""""
-""" Deoplete
-""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+"""""""""""""""""""""""""""
+"""" Deoplete
+"""""""""""""""""""""""""""
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_smart_case = 1
 
-call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
+"call deoplete#custom#source('LanguageClient', 'min_pattern_length', 2)
 
-" Disable the candidates in Comment/String syntaxes.
-call deoplete#custom#source('_',
-            \ 'disabled_syntaxes', ['Comment', 'String'])
+"" Disable the candidates in Comment/String syntaxes.
+"call deoplete#custom#source('_',
+"            \ 'disabled_syntaxes', ['Comment', 'String'])
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-" set sources
-let g:deoplete#sources = {}
-let g:deoplete#sources.cpp = ['LanguageClient']
-let g:deoplete#sources.typescript = ['LanguageClient']
-let g:deoplete#sources.java = ['LanguageClient']
-let g:deoplete#sources.vim = ['vim']
+"" set sources
+"let g:deoplete#sources = {}
+"let g:deoplete#sources.cpp = ['LanguageClient']
+"let g:deoplete#sources.typescript = ['LanguageClient']
+"let g:deoplete#sources.java = ['LanguageClient']
+"let g:deoplete#sources.vim = ['vim']
 
-" ignored sources
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['buffer', 'around']
+"" ignored sources
+"let g:deoplete#ignore_sources = {}
+"let g:deoplete#ignore_sources._ = ['buffer', 'around']
 
 """"""""""""""
 """ TMUX
@@ -49,6 +49,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """ FZF
 """ https://github.com/zenbro/dotfiles/blob/master/.nvimrc#L151-L187
 """ TODO check this out and add fzf functions
+call fzf#run(fzf#wrap({'source': 'git ls-files --exclude-standard --others --cached'}))
+
 """""""""""""
 set rtp+=/usr/local/opt/fzf
 nnoremap <silent> <C-p> :Files<CR>
